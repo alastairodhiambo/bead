@@ -14,7 +14,7 @@ $yellow: #ffd849;
     position: absolute;
     bottom: px(5);
     left: px(5);
-    @include box(90vw, px(300));
+    @include box(90vw, px(350));
     opacity: 1;
     color: $white;
     border-radius: px(10);
@@ -22,7 +22,7 @@ $yellow: #ffd849;
     background-color: rgba($color: $black, $alpha: 0.8);
 
     @include breakpoint(tablet) {
-      @include box(px(500), px(200));
+      @include box(px(350), px(175));
     }
 
     .title {
@@ -34,13 +34,13 @@ $yellow: #ffd849;
       flex-wrap: wrap;
       gap: px(10);
       color: $black;
-      font-size: px(12);
+      font-size: px(8);
       text-align: center;
       justify-content: center;
 
       .button {
         cursor: pointer;
-        @include box(px(60));
+        @include box(px(40));
         border-radius: 50%;
         background: $yellow;
 
@@ -53,7 +53,7 @@ $yellow: #ffd849;
       }
 
       .beadTypeButton {
-        @include box(px(100), px(50));
+        @include box(px(80), px(40));
         border-radius: px(10);
         background: $yellow;
         display: flex;
@@ -74,7 +74,7 @@ $yellow: #ffd849;
         align-items: center;
         justify-content: center;
 
-        @include box(px(100), px(60));
+        @include box(px(80), px(40));
         border-radius: px(10);
         background: $dark-grey;
         color: $yellow;
