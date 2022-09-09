@@ -11,12 +11,14 @@
     "colorTypeOn": "multi- colored on",
     "colorTypeOff": "multi- colored off",
     "beadType": "bead type",
+    "backgroundColor": "background color",
+    "material": "bead material",
     "hide": "hide",
     "show": "show"
   },
   "beadType": {
-    "icosahedron": "icosahedron",
     "sphere": "sphere",
+    "icosahedron": "icosahedron",
     "box": "box",
     "tetrahedron": "tetrahedron"
   },
@@ -25,7 +27,7 @@
     "inactiveButton": "#333",
     "activeText": "#000000",
     "inactiveText": "#ffffff",
-    "background": "#253841",
+    "background": "#000000",
     "fogColor": "#436575"
   },
   "sizes": {

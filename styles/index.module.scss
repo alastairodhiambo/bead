@@ -1,14 +1,10 @@
-@import '../styles/shared.scss';
+@import "../styles/shared.scss";
 
 $yellow: #ffd849;
 
 .Artwork {
   position: relative;
   font-weight: 600;
-
-  // .webgl {
-  //   @include position-100(absolute);
-  // }
 
   .hidden {
     visibility: hidden;
@@ -72,6 +68,44 @@ $yellow: #ffd849;
         }
       }
 
+      .colorButton {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        @include box(px(100), px(60));
+        border-radius: px(10);
+        background: $dark-grey;
+        color: $yellow;
+
+        div {
+          cursor: pointer;
+          @include box(px(30), px(20));
+          background-color: #ffd849;
+          border-radius: px(2);
+        }
+      }
+
+      .materialButton {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        @include box(px(100), px(60));
+        border-radius: px(10);
+        background: $dark-grey;
+        color: $yellow;
+
+        div {
+          cursor: pointer;
+          @include box(px(30), px(20));
+          background-color: red;
+          border-radius: px(2);
+        }
+      }
+
       .fileUpload {
         cursor: pointer;
         @include box(px(200), px(50));
@@ -93,5 +127,17 @@ $yellow: #ffd849;
     left: px(10);
     font-size: px(15);
     color: white;
+  }
+
+  .colorPicker {
+    position: absolute;
+    bottom: px(10);
+    left: px(10);
+
+    .closeButton {
+      color: white;
+      text-align: right;
+      cursor: pointer;
+    }
   }
 }
