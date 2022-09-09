@@ -80,10 +80,10 @@ function Art() {
               style={{ backgroundColor: color }}
             ></div>
           </div>
-          <div className={styles.materialButton} id="material-toggle">
+          {/* <div className={styles.materialButton} id="material-toggle">
             <span>{data.buttons.material}</span>
             <div></div>
-          </div>
+          </div> */}
           <div className={styles.fileUpload}>
             <input type="file" id="file-upload" hidden />
             <label htmlFor="file-upload"> {data.buttons.fileUpload}</label>

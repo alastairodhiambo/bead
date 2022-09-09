@@ -4,12 +4,14 @@ import {
   IcosahedronGeometry,
   SphereGeometry,
   InstancedMesh,
+  Mesh,
   MeshStandardMaterial,
   DynamicDrawUsage,
   Matrix4,
   Color,
   BufferAttribute,
   LoadingManager,
+  CubeTextureLoader,
 } from "three";
 
 import Experience from "../Experience.js";
@@ -396,7 +398,7 @@ export default class Beads {
               "three/examples/jsm/loaders/OBJLoader.js"
             );
 
-            let object = new OBJLoader().parse(contents);
+            let object = new OBJLoader(manager).parse(contents);
             object.name = filename;
             this.object = object;
 
@@ -408,6 +410,27 @@ export default class Beads {
         );
         reader.readAsText(file);
 
+        break;
+      // TODO: Texture Loading Trial
+      case "png":
+        reader.readAsDataURL(file);
+        reader.addEventListener(
+          "load",
+          async (event) => {
+            let contents = event.target.result;
+            let object = new CubeTextureLoader().load([
+              contents,
+              contents,
+              contents,
+              contents,
+              contents,
+              contents,
+            ]);
+
+            scope.setEnvironmentMap(object);
+          },
+          false
+        );
         break;
 
       default:
@@ -429,5 +452,29 @@ export default class Beads {
 
       this.index++;
     }
+  }
+
+  // TODO: Texture Loading Trial:
+  setEnvironmentMap(object) {
+    this.environmentMap = {};
+    this.environmentMap.intensity = 0.4;
+    this.environmentMap.texture = object;
+
+    this.scene.environment = this.environmentMap.texture;
+
+    this.environmentMap.updateMaterials = () => {
+      this.scene.traverse((child) => {
+        if (
+          child instanceof Mesh &&
+          child.material instanceof MeshStandardMaterial
+        ) {
+          child.material.envMap = this.environmentMap.texture;
+          child.material.envMapIntensity = this.environmentMap.intensity;
+          child.material.needsUpdate = true;
+        }
+      });
+    };
+
+    this.environmentMap.updateMaterials();
   }
 }
