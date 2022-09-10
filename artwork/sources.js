@@ -51,12 +51,6 @@ export default [
     type: 'fbxModel',
     path: `${path_start}models/studio_lights.fbx`
   },
-  //===== TEST MODELS =====
-  {
-    name: 'skullModel',
-    type: 'objModel',
-    path: `${path_start}models/skull.obj`
-  },
   //===== ENVIRONMENT MAPS =====
   {
     name: 'environmentMapTexture',
