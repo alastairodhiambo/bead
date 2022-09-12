@@ -1,5 +1,5 @@
 import { baseUrl } from '../data/settings';
-import data from './data.json';
+import data from '../data/data.json';
 
 const path_start = `${baseUrl}/static/`;
 

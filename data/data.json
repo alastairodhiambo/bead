@@ -1,5 +1,9 @@
 {
   "title": "BEAD",
+  "instructions": {
+    "title": "Instructions",
+    "text": ""
+  },
   "buttons": {
     "create": "create mesh",
     "animateOn": "animate load on",
@@ -14,7 +18,7 @@
     "backgroundColor": "background color",
     "material": "bead material",
     "hide": "hide",
-    "show": "show"
+    "show": "controls"
   },
   "beadType": {
     "sphere": "sphere",

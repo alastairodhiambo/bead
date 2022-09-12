@@ -16,7 +16,7 @@ import {
 
 import Experience from "../Experience.js";
 
-import data from "../data.json";
+import data from "../../data/data.json";
 
 export default class Beads {
   constructor() {

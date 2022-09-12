@@ -6,12 +6,14 @@ import "dino-color-picker";
 import styles from "../styles/index.module.scss";
 
 import Experience from "../artwork/Experience";
-import data from "../artwork/data.json";
+import data from "../data/data.json";
+
+// TODO: Possible refactors
 
 function Art() {
   const inputEl = useRef(null);
   const ref = useRef();
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState(true);
   const [showPicker, setShowPicker] = useState(false);
   const [color, setColor] = useState(data.colors.fogColor);
 
@@ -80,10 +82,6 @@ function Art() {
               style={{ backgroundColor: color }}
             ></div>
           </div>
-          {/* <div className={styles.materialButton} id="material-toggle">
-            <span>{data.buttons.material}</span>
-            <div></div>
-          </div> */}
           <div className={styles.fileUpload}>
             <input type="file" id="file-upload" hidden />
             <label htmlFor="file-upload"> {data.buttons.fileUpload}</label>
