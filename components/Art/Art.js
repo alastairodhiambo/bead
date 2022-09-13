@@ -48,9 +48,6 @@ function Art() {
       </div>
       {modal && (
         <div className={styles.instructionsModal}>
-          <div className={styles.closeButton} onClick={() => setModal(false)}>
-            X
-          </div>
           <div className={styles.instructions}>
             <h3>{data.instructions.description}</h3>
             <ol>
@@ -68,7 +65,6 @@ function Art() {
         )}
         id="controls-container"
       >
-        <h1 className={styles.title}>{data.title}</h1>
         <div className={styles.controls}>
           <div
             className={classnames(styles.button, styles.createMeshButton)}

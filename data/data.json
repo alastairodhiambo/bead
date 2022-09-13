@@ -2,12 +2,12 @@
   "title": "BEAD",
   "instructions": {
     "title": "Instructions",
-    "description": "This is a 3D scene created with Three.js.",
+    "description": "This is a generative art display made up of beads",
     "text": [
       "You can interact with it by using the buttons in the controls section in the bottom left of the screen..",
       "You can also click/touch and drag to rotate the scene.",
-      "Drag or upload an obj file to change the object rendered.",
-      "Drag or upload a square png file to change the material."
+      "Drag over the screen or click 'Upload' to load an .obj file to change the object rendered.",
+      "Drag over the screen or click 'Upload' to load a square .png file to change the material."
     ]
   },
   "buttons": {
@@ -17,7 +17,7 @@
     "reset": "remove mesh",
     "autoRotateOn": "auto rotate on",
     "autoRotateOff": "auto rotate off",
-    "fileUpload": "Drag a .obj file onto screen or click here to upload",
+    "fileUpload": "Upload",
     "colorTypeOn": "multi- colored on",
     "colorTypeOff": "multi- colored off",
     "beadType": "bead type",

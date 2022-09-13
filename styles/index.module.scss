@@ -3,4 +3,15 @@
 .Artwork {
   position: relative;
   font-weight: 600;
+
+  .title {
+    @include z-index(main-nav);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: px(10);
+    color: $white;
+    text-shadow: 1px 1px 10px black;
+  }
 }

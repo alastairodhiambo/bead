@@ -27,7 +27,8 @@
     @include z-index(instruction-button);
     bottom: px(12);
     right: px(12);
-    color: white;
+    color: $white;
+    text-shadow: 1px 1px 10px black;
     font-size: px(20);
     cursor: pointer;
   }
@@ -37,19 +38,17 @@
     @include z-index(instructions);
     bottom: px(10);
     right: px(10);
-    width: 80vw;
-    height: 60vh;
-    background-color: rgba($color: $black, $alpha: 0.8);
+    @include box(60vw, 60vh);
+    background-color: rgba($color: $black, $alpha: 0.9);
     border-radius: px(10);
-    color: white;
+    color: $white;
 
     @include breakpoint(tablet) {
-      width: px(400);
-      height: px(400);
+      @include box(px(400));
     }
 
     .instructions {
-      padding: px(10);
+      padding: px(20);
 
       h3 {
         margin-bottom: px(10);
@@ -68,7 +67,7 @@
     .closeButton {
       position: relative;
       top: px(-15);
-      color: white;
+      color: $white;
       text-align: right;
       cursor: pointer;
     }
@@ -76,16 +75,18 @@
 
   .controlsContainer {
     position: absolute;
+    @include z-index(controls);
     bottom: px(5);
     left: px(5);
-    @include box(90vw, px(350));
-    opacity: 1;
-    color: $white;
-    border-radius: px(10);
-    padding: px(10);
-    background-color: rgba($color: $black, $alpha: 0.8);
+    @include box(60vw, px(500));
     overflow: hidden;
-    @include z-index(controls);
+    padding: px(20);
+    opacity: 1;
+
+    color: $white;
+
+    border-radius: px(10) px(50) px(10) px(10);
+    background-color: rgba($color: $black, $alpha: 0.9);
 
     @include breakpoint(tablet) {
       @include box(px(600), px(250));
@@ -139,10 +140,10 @@
         align-items: center;
         justify-content: center;
 
-        @include box(px(100), px(60));
+        @include box(px(100), px(80));
         border-radius: px(10);
         background: $dark-grey;
-        color: $yellow;
+        color: $white;
 
         div {
           cursor: pointer;
@@ -152,35 +153,21 @@
         }
       }
 
-      .materialButton {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-
-        @include box(px(100), px(60));
-        border-radius: px(10);
-        background: $dark-grey;
-        color: $yellow;
-
-        div {
-          cursor: pointer;
-          @include box(px(30), px(20));
-          background-color: red;
-          border-radius: px(2);
-        }
-      }
-
       .fileUpload {
-        cursor: pointer;
         @include box(px(200), px(50));
         border: px(2) $white dotted;
         border-radius: px(10);
 
         background: $dark-grey;
         color: $white;
-        display: flex;
-        align-items: center;
+
+        label {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @include box(100%);
+        }
       }
     }
   }
@@ -191,7 +178,8 @@
     @include z-index(controls);
     bottom: px(10);
     left: px(10);
-    color: white;
+    color: $white;
+    text-shadow: 1px 1px 10px black;
     font-size: px(20);
   }
 
@@ -208,7 +196,7 @@
     }
 
     .closeButton {
-      color: white;
+      color: $white;
       text-align: right;
       cursor: pointer;
     }
