@@ -40,7 +40,6 @@ body {
 }
 
 main {
-  min-height: 100vh;
   @include z-index(pages);
 }
 

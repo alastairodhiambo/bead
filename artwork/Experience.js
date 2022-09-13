@@ -21,8 +21,6 @@ export default class Experience {
     instance = this;
 
     document.getElementById("controls-container").style.opacity = 0;
-    console.log(document.getElementById("instruction-button"));
-    document.getElementById("instruction-button").style.opacity = 0;
     document.getElementById("hide-controls").style.opacity = 0;
 
     this.canvas = _canvas;

@@ -13,7 +13,7 @@ function Artwork({ className }) {
   const containerRef = useRef(null);
   return (
     <main className={classnames(styles.Artwork, className)} ref={containerRef}>
-      <div className={styles.webgl}>{isBrowser && <ArtCanvas></ArtCanvas>}</div>
+      <div className={styles.art}>{isBrowser && <ArtCanvas></ArtCanvas>}</div>
     </main>
   );
 }

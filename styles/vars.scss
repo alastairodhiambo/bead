@@ -1,4 +1,4 @@
-@import 'layout';
+@import "layout";
 
 // Variables
 //
@@ -44,4 +44,5 @@ $navbar-height-desktop: px(80);
 // ====================================================================
 // List of z-index element
 // ====================================================================
-$elements: pages, instructions, color-picker, controls, instruction-button, main-nav, rotate, ;
+$elements: pages, webgl, instructions, controls, color-picker, instruction-button,
+  main-nav, rotate;

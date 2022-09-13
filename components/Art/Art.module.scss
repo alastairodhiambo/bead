@@ -4,11 +4,22 @@
   position: relative;
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
+
+  .webgl {
+    @include z-index(webgl);
+  }
 
   .hidden {
     visibility: hidden;
+  }
+
+  #loading-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
   }
 
   .instructionButton {
@@ -73,6 +84,8 @@
     border-radius: px(10);
     padding: px(10);
     background-color: rgba($color: $black, $alpha: 0.8);
+    overflow: hidden;
+    @include z-index(controls);
 
     @include breakpoint(tablet) {
       @include box(px(600), px(250));
@@ -175,6 +188,7 @@
   .hideControls {
     cursor: pointer;
     position: absolute;
+    @include z-index(controls);
     bottom: px(10);
     left: px(10);
     color: white;
@@ -186,6 +200,7 @@
     @include z-index(color-picker);
     bottom: px(10);
     left: px(10);
+    overflow: hidden;
 
     .colorPicker {
       border-radius: px(10);

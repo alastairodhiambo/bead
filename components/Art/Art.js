@@ -139,7 +139,7 @@ function Art() {
         </div>
       </div>
       <div id="loading-bar"></div>
-      <canvas ref={inputEl}></canvas>
+      <canvas ref={inputEl} className={styles.webgl}></canvas>
     </section>
   );
 }
