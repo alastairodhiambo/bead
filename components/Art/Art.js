@@ -3,10 +3,10 @@ import { Fog } from "three";
 import classnames from "classnames";
 import "dino-color-picker";
 
-import styles from "../styles/index.module.scss";
+import styles from "./Art.module.scss";
 
-import Experience from "../artwork/Experience";
-import data from "../data/data.json";
+import Experience from "../../artwork/Experience";
+import data from "../../data/data.json";
 
 // TODO: Possible refactors
 
@@ -14,6 +14,7 @@ function Art() {
   const inputEl = useRef(null);
   const ref = useRef();
   const [hidden, setHidden] = useState(true);
+  const [modal, setModal] = useState(false);
   const [showPicker, setShowPicker] = useState(false);
   const [color, setColor] = useState(data.colors.fogColor);
 
@@ -37,7 +38,29 @@ function Art() {
   }, []);
 
   return (
-    <>
+    <section className={styles.Art}>
+      <div
+        className={styles.instructionButton}
+        id="instruction-button"
+        onClick={() => setModal(!modal)}
+      >
+        {!modal ? "instructions" : "hide"}
+      </div>
+      {modal && (
+        <div className={styles.instructionsModal}>
+          <div className={styles.closeButton} onClick={() => setModal(false)}>
+            X
+          </div>
+          <div className={styles.instructions}>
+            <h3>{data.instructions.description}</h3>
+            <ol>
+              {data.instructions.text.map((text, index) => (
+                <li key={index}>{text}</li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      )}
       <div
         className={classnames(
           styles.controlsContainer,
@@ -96,7 +119,7 @@ function Art() {
         {hidden ? data.buttons.show : data.buttons.hide}
       </div>
       <div
-        className={styles.colorPicker}
+        className={styles.pickerContainer}
         style={{ display: !showPicker ? "none" : "block" }}
       >
         <div
@@ -108,13 +131,16 @@ function Art() {
         >
           X
         </div>
-        <dino-color-picker
-          ref={ref}
-          onChange={onColorChange}
-        ></dino-color-picker>
+        <div className={styles.colorPicker}>
+          <dino-color-picker
+            ref={ref}
+            onChange={onColorChange}
+          ></dino-color-picker>
+        </div>
       </div>
+      <div id="loading-bar"></div>
       <canvas ref={inputEl}></canvas>
-    </>
+    </section>
   );
 }
 

@@ -2,7 +2,13 @@
   "title": "BEAD",
   "instructions": {
     "title": "Instructions",
-    "text": ""
+    "description": "This is a 3D scene created with Three.js.",
+    "text": [
+      "You can interact with it by using the buttons in the controls section in the bottom left of the screen..",
+      "You can also click/touch and drag to rotate the scene.",
+      "Drag or upload an obj file to change the object rendered.",
+      "Drag or upload a square png file to change the material."
+    ]
   },
   "buttons": {
     "create": "create mesh",

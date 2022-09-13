@@ -14,6 +14,7 @@ export default class World {
 
     this.loadingBarElement = document.getElementById('loading-bar');
     this.controlsContainer = document.getElementById('controls-container');
+    this.instructionButton = document.getElementById('instruction-button');
     this.hideControls = document.getElementById('hide-controls');
 
     // Styling
@@ -28,6 +29,7 @@ export default class World {
     this.resources.manager.onLoad = () => {
       this.controlsContainer.style.opacity = 1;
       this.hideControls.style.opacity = 1;
+      this.instructionButton.style.opacity = 1;
       this.loadingBarElement.style.transform = 'scaleX(0)';
       this.loadingBarElement.style.transformOrigin = `100% 0`;
 

@@ -1,0 +1,201 @@
+@import "../../styles/shared.scss";
+
+.Art {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  .instructionButton {
+    position: absolute;
+    @include z-index(instruction-button);
+    bottom: px(12);
+    right: px(12);
+    color: white;
+    font-size: px(20);
+    cursor: pointer;
+  }
+
+  .instructionsModal {
+    position: absolute;
+    @include z-index(instructions);
+    bottom: px(10);
+    right: px(10);
+    width: 80vw;
+    height: 60vh;
+    background-color: rgba($color: $black, $alpha: 0.8);
+    border-radius: px(10);
+    color: white;
+
+    @include breakpoint(tablet) {
+      width: px(400);
+      height: px(400);
+    }
+
+    .instructions {
+      padding: px(10);
+
+      h3 {
+        margin-bottom: px(10);
+      }
+
+      ol {
+        list-style: revert;
+        padding-left: px(20);
+
+        li {
+          margin-bottom: px(10);
+        }
+      }
+    }
+
+    .closeButton {
+      position: relative;
+      top: px(-15);
+      color: white;
+      text-align: right;
+      cursor: pointer;
+    }
+  }
+
+  .controlsContainer {
+    position: absolute;
+    bottom: px(5);
+    left: px(5);
+    @include box(90vw, px(350));
+    opacity: 1;
+    color: $white;
+    border-radius: px(10);
+    padding: px(10);
+    background-color: rgba($color: $black, $alpha: 0.8);
+
+    @include breakpoint(tablet) {
+      @include box(px(600), px(250));
+    }
+
+    .title {
+      margin-bottom: px(15);
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: px(10);
+      color: $black;
+      text-align: center;
+      justify-content: center;
+
+      .button {
+        cursor: pointer;
+        @include box(px(80));
+        border-radius: 50%;
+        background: $yellow;
+
+        display: flex;
+        align-items: center;
+      }
+
+      .createMeshButton {
+        background: $dark-grey;
+      }
+
+      .beadTypeButton {
+        @include box(px(100), px(60));
+        border-radius: px(10);
+        background: $yellow;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        select {
+          background-color: $black;
+          color: $white;
+          border: none;
+        }
+      }
+
+      .colorButton {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        @include box(px(100), px(60));
+        border-radius: px(10);
+        background: $dark-grey;
+        color: $yellow;
+
+        div {
+          cursor: pointer;
+          @include box(px(30), px(20));
+          background-color: #ffd849;
+          border-radius: px(2);
+        }
+      }
+
+      .materialButton {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        @include box(px(100), px(60));
+        border-radius: px(10);
+        background: $dark-grey;
+        color: $yellow;
+
+        div {
+          cursor: pointer;
+          @include box(px(30), px(20));
+          background-color: red;
+          border-radius: px(2);
+        }
+      }
+
+      .fileUpload {
+        cursor: pointer;
+        @include box(px(200), px(50));
+        border: px(2) $white dotted;
+        border-radius: px(10);
+
+        background: $dark-grey;
+        color: $white;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  .hideControls {
+    cursor: pointer;
+    position: absolute;
+    bottom: px(10);
+    left: px(10);
+    color: white;
+    font-size: px(20);
+  }
+
+  .pickerContainer {
+    position: absolute;
+    @include z-index(color-picker);
+    bottom: px(10);
+    left: px(10);
+
+    .colorPicker {
+      border-radius: px(10);
+      overflow: hidden;
+    }
+
+    .closeButton {
+      color: white;
+      text-align: right;
+      cursor: pointer;
+    }
+  }
+}

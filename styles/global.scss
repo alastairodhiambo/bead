@@ -3,7 +3,7 @@
 // Global styling, normalize overwritten
 // @import 'fonts';
 // @import 'polyfills';
-@import 'shared';
+@import "shared";
 
 html {
   box-sizing: border-box;
@@ -14,7 +14,6 @@ html {
   text-size-adjust: none;
   font-size: 10px;
   font-family: $generic-fonts;
-  text-align: center;
 }
 
 body {
@@ -23,7 +22,6 @@ body {
   overflow-x: hidden;
   font-size: px(16);
   word-break: keep-all;
-  // @include font-work-sans-regular;
 }
 
 #root {
@@ -43,12 +41,7 @@ body {
 
 main {
   min-height: 100vh;
-  padding-top: $navbar-height-mobile;
   @include z-index(pages);
-
-  @include breakpoint(desktopSm) {
-    padding-top: $navbar-height-desktop;
-  }
 }
 
 a {
