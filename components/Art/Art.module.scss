@@ -16,14 +16,14 @@
   }
 
   #loading-bar {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 0;
   }
 
   .instructionButton {
-    position: absolute;
+    position: fixed;
     @include z-index(instruction-button);
     bottom: px(12);
     right: px(12);
@@ -34,7 +34,7 @@
   }
 
   .instructionsModal {
-    position: absolute;
+    position: fixed;
     @include z-index(instructions);
     bottom: px(10);
     right: px(10);
@@ -74,7 +74,7 @@
   }
 
   .controlsContainer {
-    position: absolute;
+    position: fixed;
     @include z-index(controls);
     bottom: px(5);
     left: px(5);
@@ -174,7 +174,7 @@
 
   .hideControls {
     cursor: pointer;
-    position: absolute;
+    position: fixed;
     @include z-index(controls);
     bottom: px(10);
     left: px(10);
@@ -184,7 +184,7 @@
   }
 
   .pickerContainer {
-    position: absolute;
+    position: fixed;
     @include z-index(color-picker);
     bottom: px(10);
     left: px(10);
